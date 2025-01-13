@@ -1,5 +1,5 @@
 {
-  "name": "10_project_biryani-shop",
+  "name": "10_project_jars",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,6 +14,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
+    "react-router-dom": "^7.1.1",
     "react-slick": "^0.29.0",
     "react-star-ratings": "^2.3.0",
     "slick-carousel": "^1.8.1"

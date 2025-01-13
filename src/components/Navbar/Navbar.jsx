@@ -1,102 +1,105 @@
-import React from "react";
-import Logo from "../../assets/website/logo.png";
-import { FaCartShopping } from "react-icons/fa6";
+import React, { useState } from "react";
+import Logo from "../../assets/pmkweb/logo.png";
 import DarkMode from "./DarkMode";
-import { FaCaretDown } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { FaInstagram, FaSpotify, FaTiktok, FaYoutube } from "react-icons/fa"; 
 
 const Menu = [
   {
     id: 1,
-    name: "Home",
-    link: "/#",
+    name: "Beranda",
+    link: "/",
   },
   {
     id: 2,
-    name: "Best Seller",
-    link: "/#services",
-  },
-];
-
-const DropdownLinks = [
-  {
-    name: "Trending Books",
-    link: "/#",
+    name: "Profil",
+    link: "/profil",
   },
   {
-    name: "Best Selling",
-    link: "/#",
+    id: 3,
+    name: "Pengurus",
+    link: "/pengurus",
   },
   {
-    name: "Authors",
-    link: "/#",
+    id: 4,
+    name: "Renungan",
+    link: "/renungan",
+  },
+  {
+    id: 5,
+    name: "Persembahan",
+    link: "/persembahan",
+  },
+  {
+    id: 6,
+    name: "Dokumentasi",
+    link: "/dokumentasi",
   },
 ];
 
 const Navbar = ({ handleOrderPopup }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <>
-      <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200">
-        <div className="container py-3 sm:py-0">
-          <div className="flex justify-between items-center">
+      <div className="shadow-md bg-brownsoft2 dark:bg-gray-900 dark:text-white duration-200 h-16 flex items-center">
+        <div className="container mx-auto flex justify-between items-center h-full">
+          <div>
+            <a href="/" className="font-bold text-2xl sm:text-3xl flex gap-2">
+              <img src={Logo} alt="Logo" className="h-11 w-11" />
+            </a>
+          </div>
+          <div className="flex justify-between items-center gap-4">
             <div>
-              <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
-                <img src={Logo} alt="Logo" className="w-10" />
-                Books
-              </a>
+              <DarkMode />
             </div>
-            <div className="flex justify-between items-center gap-4">
-              <div>
-                <DarkMode />
-              </div>
-              <ul className="hidden sm:flex items-center gap-4">
-                {Menu.map((menu) => (
-                  <li key={menu.id}>
-                    <a
-                      href={menu.link}
-                      className="inline-block py-4 px-4 hover:text-primary duration-200"
-                    >
-                      {menu.name}
-                    </a>
-                  </li>
-                ))}
-                {/* Simple Dropdown and Links */}
-                <li className="group relative cursor-pointer">
-                  <a
-                    href="/#home"
-                    className="flex h-[72px] items-center gap-[2px]"
-                  >
-                    Quick Links{" "}
-                    <span>
-                      <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
-                    </span>
-                  </a>
-                  <div className="absolute -left-9 z-[9999] hidden w-[150px] rounded-md bg-white p-2 text-black group-hover:block  ">
-                    <ul className="space-y-3">
-                      {DropdownLinks.map((data) => (
-                        <li key={data.name}>
-                          <a
-                            className="inline-block w-full rounded-md p-2 hover:bg-primary/20"
-                            href={data.link}
-                          >
-                            {data.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-              <button
-                onClick={() => handleOrderPopup()}
-                className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3"
-              >
-                Order
-                <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
-              </button>
-            </div>
+            <button onClick={toggleMenu} className="bg-aliceblue dark:bg-brownsoft2 hover:scale-105 duration-200 font-bold text-blacksoft py-1 px-4 rounded-full flex items-center gap-3">
+              MENU
+              <FaBars className="text-xl text-blacksoft drop-shadow-sm cursor-pointer" />
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Hamburger Menu Popup */}
+      {isMenuOpen && (
+        <div className={`fixed inset-0 z-50 flex items-center justify-end bg-black bg-opacity-50 transition-opacity duration-300`}>
+          <div className="bg-brownsoft2 dark:bg-gray-800 rounded-2xl p-8 shadow-lg w-80 transition-transform transform duration-300">
+            <ul className="flex flex-col space-y-2">
+              {Menu.map((menu) => (
+                <li key={menu.id}>
+                  <a href={menu.link} className="block py-2 px-4 text-lg font-Poppins text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors duration-200" onClick={() => setIsMenuOpen(false)}>
+                    {menu.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            {/* Social Media Links */}
+            <div className="flex justify-center mt-4 space-x-4">
+              <a href="https://www.instagram.com/pmk_itera?igsh=eGE2NG85dzl3N2wy" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="text-2xl text-black dark:text-white transition-transform duration-200 hover:scale-110" />
+              </a>
+              <a href="https://www.tiktok.com/@pmk_itera" target="_blank" rel="noopener noreferrer">
+                <FaTiktok className="text-xl text-black dark:text-white transition-transform duration-200 hover:scale-110" />
+              </a>
+              <a href="https://open.spotify.com/show/5WrunB1fSvuB8V9PEfgOEF?si=67e8bb7a744c4730" target="_blank" rel="noopener noreferrer">
+                <FaSpotify className="text-2xl text-black dark:text-white transition-transform duration-200 hover:scale-110" />
+              </a>
+              <a href="https://www.youtube.com/@pmkitera6371" target="_blank" rel="noopener noreferrer">
+                <FaYoutube className="text-2xl text-black dark:text-white transition-transform duration-200 hover:scale-110" />
+              </a>
+            </div>
+            <button className="mt-4 bg-aliceblue dark:bg-brownsoft2 font-Poppins font-bold text-black py-2 px-4 rounded-2xl transition-colors duration-200 hover:bg-gray-200 flex items-center justify-center" onClick={toggleMenu}>
+              <FaTimes className="mr-2" />
+              TUTUP
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };
