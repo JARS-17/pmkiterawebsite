@@ -1,7 +1,7 @@
 # React + Vite
 
 Enjoy the Free code + Assets 😍 
-- Support us on Github : https://github.com/JARS-17
+- Support us on YouTube Channel: https://www.youtube.com/channel/UC1H-a1MKEFXRiFlGNLcy7gQ
 
 Currently, two official plugins are available:
 
