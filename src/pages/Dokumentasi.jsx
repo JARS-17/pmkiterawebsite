@@ -20,23 +20,23 @@ const Dokumentasi = () => {
             </a>
           </li>
           <li>
-            <a href="https://drive.google.com/your-link-here" target="_blank" rel="noopener noreferrer" className="hover:text-brownsoft2 transition duration-300">
+            <a href="https://drive.google.com/drive/folders/1-4PAoQZpAGmHfYkzVxpCc4_Pr3Z-UHCj?usp=drive_link" target="_blank" rel="noopener noreferrer" className="hover:text-brownsoft2 transition duration-300">
               DIES NATALIS PMK 2024
             </a>
           </li>
           <li>
-            <a href="https://drive.google.com/your-link-here" target="_blank" rel="noopener noreferrer" className="hover:text-brownsoft2 transition duration-300">
+            <a href="https://drive.google.com/drive/folders/1-Q7FBikp02kXU5LN9Ii4R0vT1AdEUpwT?usp=drive_link" target="_blank" rel="noopener noreferrer" className="hover:text-brownsoft2 transition duration-300">
               FIRST GATHERING PMK 2024
             </a>
           </li>
           <li>
-            <a href="https://drive.google.com/your-link-here" target="_blank" rel="noopener noreferrer" className="hover:text-brownsoft2 transition duration-300">
+            <a href="https://drive.google.com/drive/folders/178_x0e1k0Mqz63QuAHdxqyNH9DD1xBLO?usp=drive_link" target="_blank" rel="noopener noreferrer" className="hover:text-brownsoft2 transition duration-300">
               UPGRADING PMK 2024
             </a>
           </li>
           <li>
-            <a href="https://drive.google.com/your-link-here" target="_blank" rel="noopener noreferrer" className="hover:text-brownsoft2 transition duration-300">
-              PELANTIKAN BPH PMK 2024
+            <a href="https://drive.google.com/drive/folders/16vgHd42Sx2iwghJ6qhkSV80zuOjWQOcy?usp=drive_link" target="_blank" rel="noopener noreferrer" className="hover:text-brownsoft2 transition duration-300">
+              IBADAH MINGGUAN PMK 2024
             </a>
           </li>
         </ul>
